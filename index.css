@@ -28,11 +28,11 @@ body {
 .search-area {
   background-color: #1f2a48;
   padding: 10px;
-  border-radius: 5px;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  -ms-border-radius: 5px;
-  -o-border-radius: 5px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -72,6 +72,46 @@ body {
     color: white;
     outline: none;
     border: none;
+  }
+}
+
+.card {
+  background-color: #1f2a48;
+  margin-top: 20px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  padding: 10px;
+  .main-info {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    .text {
+      margin-left: 20px;
+      .name {
+        margin-top: 5px;
+        margin-bottom: 0;
+        color: white;
+      }
+      .handle {
+        font-size: 10px;
+        color: #007afd;
+      }
+      .date {
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.7);
+      }
+    }
+    .user-avatar {
+      width: 75px;
+      border-radius: 50%;
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      -ms-border-radius: 50%;
+      -o-border-radius: 50%;
+    }
   }
 }
 
