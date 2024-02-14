@@ -27,11 +27,11 @@ To install and run this project, follow these steps:
 
 ## Testing
 
-You can run the Live Preview server with the following Link https://abdo100300500.github.io/Git-Repo/
+You can run the Live Preview server with the following Link https://AbdelrahmanHassanAlii.github.io/Git-Repo/
 
 ## Usage
 
-Here's how you can use this project:
+Here's how you can use this project :
 
 1. Open your web browser.
 2. Navigate to `your local host such a http://localhost:3000`.
@@ -51,4 +51,4 @@ We welcome contributions! If you'd like to contribute to this project, please fo
 
 - My Name is Abdelrahman Hassan and I'm Frontend Developer
 - Linkedin: https://linkedin.com/in/abdelrahman-hassan-b09b80250
-- Github: https://github.com/abdo100300500
+- Github: https://github.com/AbdelrahmanHassanAlii
