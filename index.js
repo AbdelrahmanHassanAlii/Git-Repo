@@ -1,40 +1,28 @@
-// import axios from 'axios'
-
-// let searcArea = document.querySelector('.search-area input');
-
-// let searchButton = document.querySelector('.search-area .search-button');
-
-// let dataArea = document.querySelector('.data');
-
-// searchButton.onclick = () => {
-//     getRepos();
-// }
-
-// let getRepos = () => {
-//     if(searcArea.value === ''){
-//         dataArea.innerHTML = '<span>Please Enter Githup Username</span>';
-//         dataArea.style.textAlign = 'center';
-//         dataArea .style.fontWeight = 'bold';
-//     }
-//     else{
-//         axios.get('https://api.githup.com/users/ElzeroWebSchool/repos')
-//         .then((res) => {
-//             return res.json();
-//         })
-//         .then((data) => {
-//             console.log(data);
-//         });
-//     }
-// }
-
-// import axios from 'axios';
-
 const searchArea = document.querySelector(".search-area input");
 const searchButton = document.querySelector(".search-area .search-button");
 const dataArea = document.querySelector(".data");
+const card = document.querySelector(".card");
 
 searchButton.onclick = () => {
+  getUserData();
   getRepos();
+};
+
+const getUserData = () => {
+  const username = searchArea.value.trim();
+  if (username === "") {
+    dataArea.innerHTML = "<span>Please Enter a GitHub Username</span>";
+    dataArea.style.textAlign = "center";
+    dataArea.style.fontWeight = "bold";
+  } else {
+    fetch(`https://api.github.com/users/${username}`)
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        console.log(data.avatar_url);
+      });
+  }
 };
 
 const getRepos = () => {
@@ -52,7 +40,7 @@ const getRepos = () => {
         // console.log(data);
         dataArea.innerHTML = "";
         data.forEach((repo) => {
-          console.log(repo.name);
+          // console.log(repo.name);
           let mainDiv = document.createElement("div");
           mainDiv.className = "repo-box";
           mainDiv.textContent = repo.name;
