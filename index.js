@@ -109,6 +109,34 @@ const getUserData = () => {
           numberOfFollowing.className = "number";
           numberOfFollowing.innerHTML = data.following;
 
+          let contacts = document.createElement("div");
+          contacts.className = "contacts";
+
+          let adress = document.createElement("p");
+          adress.className = "adress";
+          adress.innerHTML =
+            `<i class="fa-solid fa-location-dot"></i>` +
+            (data.location ? data.location : "Not Available");
+
+          let link = document.createElement("a");
+          link.className = "link";
+          link.src = data.blog;
+          link.innerHTML =
+            `<i class="fa-solid fa-link"></i>` +
+            (data.blog === "" ? "Not Available" : data.blog);
+
+          let twiter = document.createElement("p");
+          twiter.className = "twitter";
+          twiter.innerHTML =
+            `<i class="fa-brands fa-twitter"></i>` +
+            (data.twitter_username ? data.twitter_username : "Not Available");
+
+          let company = document.createElement("p");
+          company.className = "company";
+          company.innerHTML =
+            `<i class="fa-solid fa-building"></i>` +
+            (data.company === "" ? "Not Available" : data.company);
+
           //append the name to taxt area
           text.appendChild(name);
           text.appendChild(handle);
@@ -131,10 +159,16 @@ const getUserData = () => {
           numbers.appendChild(followersContainer);
           numbers.appendChild(followingContainer);
 
+          contacts.appendChild(adress);
+          contacts.appendChild(link);
+          contacts.appendChild(twiter);
+          contacts.appendChild(company);
+
           //append main-info to card
           card.appendChild(mainInfo);
           card.appendChild(bio);
           card.appendChild(numbers);
+          card.appendChild(contacts);
 
           searchArea.innerHTML = ``;
         }

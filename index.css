@@ -135,6 +135,21 @@ body {
       }
     }
   }
+
+  .contacts {
+    /* background-color: #f44336; */
+    p,
+    a {
+      font-size: 12px;
+      display: flex;
+      align-items: center;
+    }
+    i {
+      margin-right: 10px;
+      width: 30px;
+      font-size: 20px;
+    }
+  }
 }
 
 .git-container .data {
