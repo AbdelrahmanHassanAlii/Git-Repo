@@ -83,6 +83,7 @@ body {
   -moz-border-radius: 10px;
   -ms-border-radius: 10px;
   -o-border-radius: 10px;
+  color: white;
   padding: 10px;
   .main-info {
     display: flex;
@@ -93,7 +94,6 @@ body {
       .name {
         margin-top: 5px;
         margin-bottom: 0;
-        color: white;
       }
       .handle {
         font-size: 10px;
@@ -111,6 +111,28 @@ body {
       -moz-border-radius: 50%;
       -ms-border-radius: 50%;
       -o-border-radius: 50%;
+    }
+  }
+  .numbers {
+    background-color: #141c30;
+    width: 90%;
+    margin: 20px auto 0;
+    padding: 10px;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    div {
+      text-align: center;
+      & p:first-child {
+        font-size: 13px;
+        color: rgba(255, 255, 255, 0.5);
+      }
     }
   }
 }

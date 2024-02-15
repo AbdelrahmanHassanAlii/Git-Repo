@@ -18,6 +18,7 @@ function formatDate(dateString) {
 }
 
 searchButton.onclick = () => {
+  card.innerHTML = "";
   getUserData();
   getRepos();
 };
@@ -34,50 +35,109 @@ const getUserData = () => {
         return res.json();
       })
       .then((data) => {
-        //display the card
-        card.style.display = "block";
-        //create main-info component
-        let mainInfo = document.createElement("div");
-        mainInfo.className = "main-info";
+        if (data.message === "Not Found") {
+          return;
+        } else {
+          //display the card
+          card.style.display = "block";
+          //create main-info component
+          let mainInfo = document.createElement("div");
+          mainInfo.className = "main-info";
 
-        //create the image
-        let image = document.createElement("img");
-        image.className = `user-avatar`;
-        image.src = data.avatar_url;
+          //create the image
+          let image = document.createElement("img");
+          image.className = `user-avatar`;
+          image.src = data.avatar_url;
 
-        //create the text container next to image
-        let text = document.createElement("div");
-        text.className = "text";
+          //create the text container next to image
+          let text = document.createElement("div");
+          text.className = "text";
 
-        //get the name of the user
-        let name = document.createElement("p");
-        name.className = "name";
-        name.innerHTML = data.name;
+          //get the name of the user
+          let name = document.createElement("p");
+          name.className = "name";
+          name.innerHTML = data.name;
 
-        //get the user handle
-        let handle = document.createElement("a");
-        handle.href = data.html_url;
-        handle.target = "_blank";
-        handle.className = "handle";
-        handle.innerHTML = "@" + data.login;
+          //get the user handle
+          let handle = document.createElement("a");
+          handle.href = data.html_url;
+          handle.target = "_blank";
+          handle.className = "handle";
+          handle.innerHTML = "@" + data.login;
 
-        //get the user Joined date
-        let date = document.createElement("p");
-        date.className = "date";
-        date.innerHTML = formatDate(data.created_at);
+          //get the user Joined date
+          let date = document.createElement("p");
+          date.className = "date";
+          date.innerHTML = formatDate(data.created_at);
 
-        //append the name to taxt area
-        text.appendChild(name);
-        text.appendChild(handle);
-        text.appendChild(date);
-        //append image to main-info
-        mainInfo.appendChild(image);
-        mainInfo.appendChild(text);
+          //get the user bio
+          let bio = document.createElement("div");
+          bio.className = "bio";
+          bio.innerHTML = data.bio || `This Profile has no Bio`;
 
-        //append main-info to card
-        card.appendChild(mainInfo);
+          //create the container of the numbers
+          let numbers = document.createElement("div");
+          numbers.className = "numbers";
 
-        searchArea.innerHTML = ``;
+          let publicRepositories = document.createElement("div");
+
+          let publicRepositoriesName = document.createElement("p");
+          publicRepositoriesName.className = "public-repositories-name";
+          publicRepositoriesName.innerHTML = "Public Repos";
+
+          let numberOfPublicRepos = document.createElement("p");
+          numberOfPublicRepos.className = "number";
+          numberOfPublicRepos.innerHTML = data.public_repos;
+
+          let followersContainer = document.createElement("div");
+
+          let followers = document.createElement("p");
+          followers.className = "followers";
+          followers.innerHTML = "Followers";
+
+          let numberOfFollowers = document.createElement("p");
+          numberOfFollowers.className = "number";
+          numberOfFollowers.innerHTML = data.followers;
+
+          let followingContainer = document.createElement("div");
+
+          let following = document.createElement("p");
+          following.className = "followering";
+          following.innerHTML = "Followering";
+
+          let numberOfFollowing = document.createElement("p");
+          numberOfFollowing.className = "number";
+          numberOfFollowing.innerHTML = data.following;
+
+          //append the name to taxt area
+          text.appendChild(name);
+          text.appendChild(handle);
+          text.appendChild(date);
+
+          //append image to main-info
+          mainInfo.appendChild(image);
+          mainInfo.appendChild(text);
+
+          publicRepositories.appendChild(publicRepositoriesName);
+          publicRepositories.appendChild(numberOfPublicRepos);
+
+          followersContainer.appendChild(followers);
+          followersContainer.appendChild(numberOfFollowers);
+
+          followingContainer.appendChild(following);
+          followingContainer.appendChild(numberOfFollowing);
+
+          numbers.appendChild(publicRepositories);
+          numbers.appendChild(followersContainer);
+          numbers.appendChild(followingContainer);
+
+          //append main-info to card
+          card.appendChild(mainInfo);
+          card.appendChild(bio);
+          card.appendChild(numbers);
+
+          searchArea.innerHTML = ``;
+        }
       });
   }
 };
