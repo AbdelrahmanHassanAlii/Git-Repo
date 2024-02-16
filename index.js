@@ -196,6 +196,11 @@ const getRepos = () => {
           mainDiv.className = "repo-box";
           mainDiv.textContent = ` ${index + 1} - ${repo.name}`;
 
+          let description = document.createElement("p");
+          description.className = "repo-description";
+          description.innerHTML =
+            repo.description || "NO Description For This Repository";
+
           let url = document.createElement("a");
           url.className = "button";
           url.href = `https://github.com/${username}/${repo.name}`;
@@ -216,9 +221,10 @@ const getRepos = () => {
           let buttons = document.createElement("div");
           buttons.className = "buttons";
           buttons.appendChild(url);
-          buttons.appendChild(startSpan);
+          // buttons.appendChild(startSpan);
           repo.homepage !== null ? buttons.appendChild(demo) : null;
 
+          mainDiv.appendChild(description);
           mainDiv.appendChild(buttons);
 
           dataArea.appendChild(mainDiv);
