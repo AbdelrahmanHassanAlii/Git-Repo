@@ -190,26 +190,34 @@ const getRepos = () => {
       .then((data) => {
         // console.log(data);
         dataArea.innerHTML = "";
-        data.forEach((repo) => {
+        data.forEach((repo, index) => {
           // console.log(repo.name);
           let mainDiv = document.createElement("div");
           mainDiv.className = "repo-box";
-          mainDiv.textContent = repo.name;
+          mainDiv.textContent = ` ${index + 1} - ${repo.name}`;
 
           let url = document.createElement("a");
           url.className = "button";
           url.href = `https://github.com/${username}/${repo.name}`;
           url.setAttribute("target", "_blank");
-          url.textContent = "visit";
+          url.innerHTML = `<i class="fa-solid fa-code"></i>` + "Code";
 
           let startSpan = document.createElement("span");
           startSpan.className = "button";
           startSpan.textContent = `Stars ${repo.stargazers_count}`;
 
+          let demo = document.createElement("a");
+          demo.href = `${repo.homepage}`;
+          console.log(repo.homepage);
+          demo.target = "_blank";
+          demo.className = "button demo-button";
+          demo.innerHTML = `<i class="fa-solid fa-globe"></i> Demo`;
+
           let buttons = document.createElement("div");
           buttons.className = "buttons";
           buttons.appendChild(url);
           buttons.appendChild(startSpan);
+          repo.homepage !== null ? buttons.appendChild(demo) : null;
 
           mainDiv.appendChild(buttons);
 
