@@ -114,12 +114,22 @@ const getUserData = () => {
 
           let adress = document.createElement("p");
           adress.className = "adress";
+          if (!data.adress) {
+            adress.classList.add("disabled");
+          } else {
+            adress.classList.remove("disabled");
+          }
           adress.innerHTML =
             `<i class="fa-solid fa-location-dot"></i>` +
             (data.location ? data.location : "Not Available");
 
           let link = document.createElement("a");
           link.className = "link";
+          if (!data.blog) {
+            link.classList.add("disabled");
+          } else {
+            link.classList.remove("disabled");
+          }
           link.src = data.blog;
           link.innerHTML =
             `<i class="fa-solid fa-link"></i>` +
@@ -127,12 +137,22 @@ const getUserData = () => {
 
           let twiter = document.createElement("p");
           twiter.className = "twitter";
+          if (!data.twitter_username) {
+            twiter.classList.add("disabled");
+          } else {
+            twiter.classList.remove("disabled");
+          }
           twiter.innerHTML =
             `<i class="fa-brands fa-twitter"></i>` +
             (data.twitter_username ? data.twitter_username : "Not Available");
 
           let company = document.createElement("p");
           company.className = "company";
+          if (!data.company) {
+            company.classList.add("disabled");
+          } else {
+            company.classList.remove("disabled");
+          }
           company.innerHTML =
             `<i class="fa-solid fa-building"></i>` +
             (data.company === "" ? "Not Available" : data.company);
