@@ -251,8 +251,8 @@ const getRepos = () => {
         });
       })
       .catch((error) => {
-        console.error(error);
-        dataArea.innerHTML = `<span>Error: ${error.message}</span>`;
+        // console.error(error);
+        dataArea.innerHTML = `<span> enter valid user name</span>`;
         dataArea.style.textAlign = "center";
         dataArea.style.fontWeight = "bold";
       });
