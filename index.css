@@ -37,6 +37,13 @@ body {
     color: #007afd;
   }
 }
+@media (min-width: 786px) {
+  .project-name {
+    font-size: 20px;
+    letter-spacing: 0.5px;
+    font-weight: 500;
+  }
+}
 
 .search-area {
   background-color: #1f2a48;
@@ -62,9 +69,20 @@ body {
     background-color: transparent;
     border: none;
     outline: none;
+    @media (min-width: 786px) {
+      font-size: 18px;
+    }
     &::placeholder {
       color: rgba(255, 255, 255, 0.5);
       letter-spacing: 1px;
+    }
+    @media (min-width: 786px) {
+      input {
+        font-size: 18px;
+      }
+      &::placeholder {
+        font-size: 18px;
+      }
     }
   }
   button {
@@ -107,6 +125,9 @@ body {
   .bio {
     font-size: 13px;
     color: rgba(255, 255, 255, 0.4);
+    @media (min-width: 786px) {
+      font-size: 16px;
+    }
   }
   .main-info {
     display: flex;
