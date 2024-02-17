@@ -114,7 +114,7 @@ const getUserData = () => {
 
           let adress = document.createElement("p");
           adress.className = "adress";
-          if (!data.adress) {
+          if (data.adress === "" || null) {
             adress.classList.add("disabled");
           } else {
             adress.classList.remove("disabled");
@@ -148,14 +148,14 @@ const getUserData = () => {
 
           let company = document.createElement("p");
           company.className = "company";
-          if (!data.company) {
+          if (data.company == null || "") {
             company.classList.add("disabled");
           } else {
             company.classList.remove("disabled");
           }
           company.innerHTML =
             `<i class="fa-solid fa-building"></i>` +
-            (data.company === "" ? "Not Available" : data.company);
+            (data.company !== "" || null ? "Not Available" : data.company);
 
           //append the name to taxt area
           text.appendChild(name);

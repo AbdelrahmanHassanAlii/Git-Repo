@@ -165,6 +165,7 @@ body {
   -o-border-radius: 10px;
   .repo-box {
     background-color: #141c30;
+    text-align: start;
     color: white;
     padding: 15px;
     border-radius: 5px;
