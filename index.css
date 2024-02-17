@@ -229,6 +229,11 @@ body {
       width: 30%;
       font-weight: bold;
     }
+    @media (min-width: 786px) {
+      .button {
+        width: 20% !important;
+      }
+    }
     .demo-button {
       background-color: #fc6736;
     }
