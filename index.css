@@ -62,11 +62,6 @@ body {
     background-color: transparent;
     border: none;
     outline: none;
-    caret-color: #007afd;
-    /* &:focus,
-    &:active {
-      border: 1px solid #007afd;
-    } */
     &::placeholder {
       color: rgba(255, 255, 255, 0.5);
       letter-spacing: 1px;
@@ -98,6 +93,10 @@ body {
   -o-border-radius: 10px;
   color: white;
   padding: 10px;
+  .bio {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.4);
+  }
   .main-info {
     display: flex;
     align-items: flex-start;
@@ -148,6 +147,13 @@ body {
       }
     }
   }
+  @media (min-width: 768px) {
+    .numbers {
+      width: 50%;
+      justify-content: space-around;
+      font-size: 15px;
+    }
+  }
 
   .contacts {
     p,
@@ -160,9 +166,6 @@ body {
       margin-right: 10px;
       width: 30px;
       font-size: 20px;
-    }
-    .disabled {
-      opacity: 0.5;
     }
   }
 }
@@ -178,7 +181,6 @@ body {
   -o-border-radius: 10px;
   color: rgba(255, 255, 255, 0.5);
   text-align: center;
-
   .repo-box {
     background-color: #141c30;
     text-align: start;
