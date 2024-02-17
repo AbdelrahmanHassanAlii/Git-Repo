@@ -1,5 +1,9 @@
 # Git-Repo
 
+![Cover](./images/axhe4rw0jpykyhdphhwc.jpg)
+
+## Welcome!👋
+
 ## Table of Contents
 
 - [Introduction](#introduction)
