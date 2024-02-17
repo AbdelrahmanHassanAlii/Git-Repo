@@ -25,6 +25,19 @@ body {
   }
 }
 
+.project-name {
+  color: rgba(255, 255, 255, 0.8);
+  padding: 10px;
+  letter-spacing: 1px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  i {
+    font-size: 20px;
+    color: #007afd;
+  }
+}
+
 .search-area {
   background-color: #1f2a48;
   padding: 10px;
@@ -148,7 +161,7 @@ body {
       width: 30px;
       font-size: 20px;
     }
-    .disabled{
+    .disabled {
       opacity: 0.5;
     }
   }
@@ -163,6 +176,9 @@ body {
   -moz-border-radius: 10px;
   -ms-border-radius: 10px;
   -o-border-radius: 10px;
+  color: rgba(255, 255, 255, 0.5);
+  text-align: center;
+
   .repo-box {
     background-color: #141c30;
     text-align: start;
